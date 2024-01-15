@@ -1,14 +1,20 @@
-def Find_name():
+def find_name():
     print("ввдедите фио")
     print(contact[input()])
-def Delete():
+
+
+def delete():
     print("введите ФИО удаляемого контакта")
     del contact[input()]
-def Change_name():
+
+
+def change_name():
     print("введите фио изменяемого контакта и новое имя")
     name1,name2=input().split()
     contact[name2] = contact.pop(name1)
-def Append_name():
+
+
+def append_name():
     print("введите фио")
     name=input()
     s=[]
@@ -17,7 +23,9 @@ def Append_name():
     print("введите коментарий")
     s.append(input())
     contact[name]=s
-def Print_Menu():
+
+
+def print_Menu():
     print("menu:")
     print("Нажмите 1 для получения контакта")
     print("Нажмите 2 для удаления контакта")
@@ -38,26 +46,26 @@ with open("contacts.txt", 'r+') as contacts:
     while A:
         contact[A[0]]=A[1:]
         A=contacts.readline().split()
-Print_Menu()
+print_Menu()
 Menu=[1,2,3,4,5,0]
 a=int(input())
 #print(contact)
 while not (a in Menu):
-    Print_Menu()
+    print_Menu()
     a=int(input())
 while a:
     if a==1:
-        Find_name()
+        find_name()
     elif a==2:
-        Delete()
+        delete()
     elif a==3:
-        Change_name()
+        change_name()
     elif a==4:
-        Append_name()
+        append_name()
     elif a==5:
         print(contact)      
     
-    Print_Menu()
+    print_Menu()
     a=int(input())
     
 contacts.close()
