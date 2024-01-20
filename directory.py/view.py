@@ -1,4 +1,5 @@
 import text
+import model
 
 
 def main_menu()->int:
@@ -15,8 +16,8 @@ def main_menu()->int:
             print(f"Введите пункт меню от 1 до {len(text.main_menu-1)}")
 
 
-def show_contact(p_book:dict[int,list[str]],error_messege:str):
-    max_size=list(map(lambda x: len(max(x,key=len)),list(zip(*p_book.values()))))
+def show_contact(p_book: model.PhoneBook ,error_messege:str):
+    max_size=p_book.max_len()
 
     if p_book:
         print("\n"+"="*(sum(max_size)+7))
