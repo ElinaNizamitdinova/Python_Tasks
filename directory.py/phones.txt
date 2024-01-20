@@ -1,0 +1,3 @@
+Elena;9213567201;teacher
+Polina;9567895661;friend
+Lina;9876543342;trainer
